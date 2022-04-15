@@ -36,11 +36,11 @@ def upload_file():
         return resp
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
-        if os.path.exists(app.config['UPLOAD_IMAGES']):
-            file.save(os.path.join(app.config['UPLOAD_IMAGES'], filename))
-        else:
-            os.mkdir(app.config['UPLOAD_IMAGES'])
-            file.save(os.path.join(app.config['UPLOAD_IMAGES'], filename))
+        # if os.path.exists(app.config['UPLOAD_IMAGES']):
+        #     file.save(os.path.join(app.config['UPLOAD_IMAGES'], filename))
+        # else:
+        #     os.mkdir(app.config['UPLOAD_IMAGES'])
+        #     file.save(os.path.join(app.config['UPLOAD_IMAGES'], filename))
         resp = jsonify(
             {
                 'food_name': DUMMY_FOODS[randint(0, len(DUMMY_FOODS))],
